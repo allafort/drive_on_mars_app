@@ -1,9 +1,9 @@
 [theme]
-primaryColor="666b6e"
-backgroundColor="#f5f7fa"
-secondaryBackgroundColor="#9dc8e4"
-textColor="#22223b"
-font="sans serif"
+primaryColor="#ed7d31"
+backgroundColor="#4f4a45"
+secondaryBackgroundColor="#6c5f5b"
+textColor="#f6f1ee"
+font="monospace"
 
 [server]
 enableXsrfProtection = false
