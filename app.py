@@ -5,10 +5,10 @@ import requests
 
 # ----------------------------------------------------------------
 # Using local API
-url = 'http://127.0.0.1:8000'
+# url = 'http://127.0.0.1:8000'
 
 # Using our remote running API
-# url = 'https://containermars-jnjlxgdooq-ew.a.run.app/predict'
+url = 'https://containermars-jnjlxgdooq-ew.a.run.app/'
 #
 # ----------------------------------------------------------------
 
