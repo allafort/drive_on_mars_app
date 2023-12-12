@@ -8,7 +8,7 @@ import requests
 # url = 'http://127.0.0.1:8000'
 
 # Using our remote running API
-url = 'https://containermars-jnjlxgdooq-ew.a.run.app/'
+url = 'https://marscontainer-ckkz5nqjrq-ew.a.run.app/'
 #
 # ----------------------------------------------------------------
 
@@ -70,25 +70,3 @@ if img_file_buffer is not None:
       else:
         st.markdown("**Oops**, something went wrong 😓 Please try again.")
         print(res.status_code, res.content)
-
-
-
-st.markdown("---"*10)
-
-st.markdown('''
-            > Additional information
-
-            ''')
-
-param1 = st.slider('Select a number', 1, 10, 3)
-
-param2 = st.slider('Select another number', 1, 10, 3)
-
-
-params = {
-    'feature1': param1,  # 0 for Sunday, 1 for Monday, ...
-    'feature2': param2
-}
-response = requests.get(url + "/predict", params=params)
-
-st.text(response.json())
