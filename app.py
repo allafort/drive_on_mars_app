@@ -117,7 +117,7 @@ with upload_tab:
                 bg_color = (0, 0, 0, 0.1)
                 output_image = color.label2rgb(
                     y_pred_arr,
-                    alpha = 0.3,
+                    alpha = 0.15,
                     image = image_back,
                     colors = colors,
                     bg_label = 4,
@@ -212,7 +212,7 @@ with gallery_tab:
             bg_color = (0, 0, 0, 0.1)
             output_image = color.label2rgb(
                 y_pred_arr,
-                alpha = 0.3,
+                alpha = 0.15,
                 image = image_back,
                 colors = colors,
                 bg_label = 4,
