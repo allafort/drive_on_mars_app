@@ -1,3 +1,5 @@
 # Sreamlit and extensions
 streamlit
 requests
+scikit-image
+# matplotlib
