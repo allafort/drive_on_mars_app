@@ -25,6 +25,12 @@ background_image = """
     background-position: center;
     background-repeat: no-repeat;
 }
+
+#root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.st-emotion-cache-1y4p8pa.ea3mdgi2 > div {
+    background-color: rgba(50,50,50,.2);
+    padding: 1em ;
+}
+
 </style>
 """
 
@@ -36,8 +42,8 @@ st.markdown(background_image, unsafe_allow_html=True)
 
 st.title('Drive on Mars ')
 st.markdown('''
-            > This is our project...
-            > [Our Github repo](https://github.com/TigerManon/drive-on-mars)
+            This is our project...
+            [Our Github repo](https://github.com/TigerManon/drive-on-mars)
             ''')
 
 
