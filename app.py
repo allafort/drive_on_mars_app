@@ -51,7 +51,7 @@ st.set_page_config(page_title="Drive on Mars", layout="centered", page_icon=f"da
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
-    background-image: url("https://caltech-prod.s3.amazonaws.com/main/images/Mars_Mastcam_1.2e16d0ba.fill-1600x810-c100.jpg");
+    background-image: url("https://github.com/allafort/drive_on_mars_app/blob/main/media/background.jpg?raw=true");
     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
     background-position: center;
     background-repeat: no-repeat;
@@ -65,6 +65,7 @@ background_image = """
 </style>
 """
 
+# https://caltech-prod.s3.amazonaws.com/main/images/Mars_Mastcam_1.2e16d0ba.fill-1600x810-c100.jpg
 # https://clickhole.com/wp-content/uploads/2021/06/iStock-1046189998-e1623680757793.jpg
 
     # max-width: 1200px;
