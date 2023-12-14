@@ -6,11 +6,20 @@ import requests
 
 from PIL import Image
 from skimage import color
+from io import BytesIO
+import base64
 
 import streamlit as st
 
 
 # import matplotlib.pyplot as plt
+
+
+# Function to create a colored box
+def colored_box(color, label):
+    return f'<div style="display: inline-block; margin-right: 10px;"><div style="background-color:{color}; width:25px; height:25px; display:inline-block;"></div> {label}</div>'
+
+
 
 # ----------------------------------------------------------------
 # Using local API
@@ -22,7 +31,23 @@ url = 'https://marscontainer-ckkz5nqjrq-ew.a.run.app/'
 # ----------------------------------------------------------------
 
 
-# Set the background image
+# Load the image
+icon_path = 'media/favicon-32x32.png'
+icon_image = Image.open(icon_path)
+icon_image = icon_image.resize((62, 62))
+
+# Convert the image to bytes
+icon_data = BytesIO()
+icon_image.save(icon_data, format='PNG')
+icon_data = icon_data.getvalue()
+
+# Convert bytes to base64-encoded string
+icon_data_base64 = base64.b64encode(icon_data).decode()
+
+st.set_page_config(page_title="Drive on Mars", layout="centered", page_icon=f"data:image/png;base64,{icon_data_base64}")
+
+
+# Custom CSS adjustments for background image and center block
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
@@ -117,7 +142,7 @@ with upload_tab:
                 bg_color = (0, 0, 0, 0.1)
                 output_image = color.label2rgb(
                     y_pred_arr,
-                    alpha = 0.15,
+                    alpha = 0.25,
                     image = image_back,
                     colors = colors,
                     bg_label = 4,
@@ -147,8 +172,24 @@ with upload_tab:
 
 
 
+
             else:
                 st.markdown("**Oops**, something went wrong 😓 Please try again.")
+
+        # Color boxes on the same line under the image
+        st.markdown(
+            '<div style="display: flex; justify-content: space-between;">' +
+            colored_box("#2D6193ff", "Soil") +
+            colored_box("#93942Eff", "Sand") +
+            colored_box("#4AA574ff", "Bedrock") +
+            colored_box("#963031ff", "Big Rocks") +
+            colored_box("#2A2929ff", "Not classified") +
+            '</div>',
+            unsafe_allow_html=True
+    )
+
+
+
 
 with gallery_tab:
 
@@ -213,7 +254,7 @@ with gallery_tab:
             bg_color = (0, 0, 0, 0.1)
             output_image = color.label2rgb(
                 y_pred_arr,
-                alpha = 0.15,
+                alpha = 0.25,
                 image = image_back,
                 colors = colors,
                 bg_label = 4,
@@ -242,6 +283,18 @@ with gallery_tab:
             # st.pyplot(fig)
 
 
-
         else:
             st.markdown("**Oops**, something went wrong 😓 Please try again.")
+
+
+    # Color boxes on the same line under the image
+    st.markdown(
+            '<div style="display: flex; justify-content: space-between;">' +
+            colored_box("#2D6193ff", "Soil") +
+            colored_box("#93942Eff", "Sand") +
+            colored_box("#4AA574ff", "Bedrock") +
+            colored_box("#963031ff", "Big Rocks") +
+            colored_box("#2A2929ff", "Not classified") +
+            '</div>',
+            unsafe_allow_html=True
+    )
