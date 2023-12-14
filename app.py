@@ -217,7 +217,7 @@ with gallery_tab:
 
     # Custom order
     options = ['Ridge Soil and Sand', 'Bedrock Ridge',  'Large Rocks over Sand']
-    file_name = st.selectbox('Sélectionnez une image', [' - '] + options)
+    file_name = st.selectbox('Select an image', [' - '] + options)
 
     # if st.session_state.get("file_uploader") is not None:
     #     st.warning("To use the Gallery, remove the uploaded image first.")
