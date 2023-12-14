@@ -48,7 +48,7 @@ st.markdown(background_image, unsafe_allow_html=True)
 
 st.title('Drive on Mars ')
 
-st.markdown('Helping Mars rovers identify their terrain enviroment!')
+st.markdown('Helping Mars rovers identify their terrain environment!')
 # st.markdown('''
 #             This is our project...
 #             [Our Github repo](https://github.com/TigerManon/drive-on-mars)
@@ -153,6 +153,7 @@ with upload_tab:
 with gallery_tab:
 
     options = list(gallery_dict.keys())
+
     file_name = st.selectbox("Select Mars Terrain",
                             options=options, index=options.index("Bedrock Ridge"))
     file = gallery_dict[file_name]
