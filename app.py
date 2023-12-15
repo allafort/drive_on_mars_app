@@ -194,7 +194,7 @@ with upload_tab:
 
 
             else:
-                st.markdown("**Oops**, something went wrong 😓 Please try again.")
+                st.markdown("Please upload a picture of Mars landscape ☄️ ")
 
         # Color boxes on the same line under the image
         st.markdown(
