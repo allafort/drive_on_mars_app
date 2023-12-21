@@ -1,2 +1,1 @@
-# drive_on_mars_app
-Front end for our LeWagon Drive on Mars project
+This repo hosts the front end for our LeWagon Drive on Mars project
